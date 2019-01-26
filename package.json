@@ -1,0 +1,16 @@
+{
+  "name": "kong-examples",
+  "version": "0.0.0",
+  "description": "Kong API gateway examples for didactic use",
+  "repository": "",
+  "author": "Andrea Gueugnaut <agueugnaut@octo.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "test": "node src/**/*.test.js"
+  },
+  "dependencies": {
+    "ava": "^1.1.0",
+    "supertest": "^3.4.2"
+  }
+}
