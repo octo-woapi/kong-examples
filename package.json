@@ -7,10 +7,11 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "test": "node src/**/*.test.js"
+    "test": "ava"
   },
   "dependencies": {
     "ava": "^1.1.0",
+    "axios": "^0.18.0",
     "supertest": "^3.4.2"
   }
 }
