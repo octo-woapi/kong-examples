@@ -1,0 +1,168 @@
+{
+	"info": {
+		"_postman_id": "c773a18e-61bf-469a-8c50-056a74e62119",
+		"name": "Kong examples",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "List services",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{gateway}}/services",
+					"host": [
+						"{{gateway}}"
+					],
+					"path": [
+						"services"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a service",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"httpbin-api\",\n\t\"url\": \"https://httpbin.org/\"\n}"
+				},
+				"url": {
+					"raw": "{{gateway}}/services",
+					"host": [
+						"{{gateway}}"
+					],
+					"path": [
+						"services"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove a service",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{gateway}}/services/httpbin-api",
+					"host": [
+						"{{gateway}}"
+					],
+					"path": [
+						"services",
+						"httpbin-api"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List routes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{gateway}}/routes",
+					"host": [
+						"{{gateway}}"
+					],
+					"path": [
+						"routes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a route for a service",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"bin\",\n\t\"paths\": [\"/bin\"]\n}"
+				},
+				"url": {
+					"raw": "{{gateway}}/services/httpbin-api/routes",
+					"host": [
+						"{{gateway}}"
+					],
+					"path": [
+						"services",
+						"httpbin-api",
+						"routes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove a route",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"paths\": [\"/bin\"]\n}"
+				},
+				"url": {
+					"raw": "{{gateway}}/routes/bin",
+					"host": [
+						"{{gateway}}"
+					],
+					"path": [
+						"routes",
+						"bin"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"id": "b3f254e4-b0cd-41d0-8a3d-7e72a2b6b8e2",
+			"key": "gateway",
+			"value": "http://localhost:8001",
+			"type": "string"
+		}
+	]
+}
